@@ -36,4 +36,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.REPO }}/${{ secrets.APP }}:${{ github.ref }}
+          tags: ${{ secrets.REPO }}/${{ secrets.APP }}:${{ github.ref_name }}
