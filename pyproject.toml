@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "random_data_generator"
+version = "0.0.0"
+description = "Scripts for Redpanda and TimescaleDB blogpost."
+authors = ["Nazli Ander <mail@nander.cc>"]
+readme = "README.md"
+packages = [{ include = "random_data_generator", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+faker = "^15.3.4"
+pydantic = "^1.10.2"
+numpy = "^1.24.1"
+flask = "^2.2.2"
+kafka-python = "^2.0.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+isort = "^5.11.4"
+
+[tool.poetry.scripts]
+data-producer = "random_data_generator.cli:rpk_cli"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
